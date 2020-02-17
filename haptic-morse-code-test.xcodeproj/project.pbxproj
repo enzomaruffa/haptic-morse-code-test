@@ -16,6 +16,7 @@
 		475525AC23FA11D400C5E0F8 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475525AB23FA11D400C5E0F8 /* HapticManager.swift */; };
 		475525AE23FA123400C5E0F8 /* MorseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475525AD23FA123400C5E0F8 /* MorseCharacter.swift */; };
 		475525B023FA128400C5E0F8 /* MorseCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475525AF23FA128400C5E0F8 /* MorseCharacterFactory.swift */; };
+		475525B223FA37FF00C5E0F8 /* MorseSignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475525B123FA37FF00C5E0F8 /* MorseSignalType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		475525AB23FA11D400C5E0F8 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		475525AD23FA123400C5E0F8 /* MorseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCharacter.swift; sourceTree = "<group>"; };
 		475525AF23FA128400C5E0F8 /* MorseCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCharacterFactory.swift; sourceTree = "<group>"; };
+		475525B123FA37FF00C5E0F8 /* MorseSignalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseSignalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				475525AB23FA11D400C5E0F8 /* HapticManager.swift */,
 				475525AD23FA123400C5E0F8 /* MorseCharacter.swift */,
 				475525AF23FA128400C5E0F8 /* MorseCharacterFactory.swift */,
+				475525B123FA37FF00C5E0F8 /* MorseSignalType.swift */,
 			);
 			path = "haptic-morse-code-test";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				4755259A23FA11B300C5E0F8 /* SceneDelegate.swift in Sources */,
 				475525AC23FA11D400C5E0F8 /* HapticManager.swift in Sources */,
 				475525B023FA128400C5E0F8 /* MorseCharacterFactory.swift in Sources */,
+				475525B223FA37FF00C5E0F8 /* MorseSignalType.swift in Sources */,
 				4755259C23FA11B300C5E0F8 /* ContentView.swift in Sources */,
 				475525AE23FA123400C5E0F8 /* MorseCharacter.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import CoreHaptics
 
 class MorseCharacterFactory {
     
-    static let unitLength: Double = 0.1
+    static let unitLength: Double = 0.15
     static var dotLength: Double {
         1 * unitLength
     }
@@ -26,6 +26,87 @@ class MorseCharacterFactory {
     static var wordSpacing: Double  {
         7 * unitLength
     }
+    
+    static private func getMorseSignals(for character: Character) -> [MorseSignalType]? {
+        switch character {
+        case "a":
+            return [.dot, .dash]
+        case "b":
+            return [.dash, .dot, .dot, .dot]
+        case "c":
+            return [.dash, .dot, .dash, .dot]
+        case "d":
+            return [.dash, .dot, .dot]
+        case "e":
+            return [.dot]
+        case "f":
+            return [.dot, .dot, .dash, .dot]
+        case "g":
+            return [.dash, .dash, .dot]
+        case "h":
+            return [.dot, .dot, .dot, .dot]
+        case "i":
+            return [.dot, .dot]
+        case "j":
+            return [.dot, .dash, .dash, .dash]
+        case "k":
+            return [.dash, .dot, .dash]
+        case "l":
+            return [.dot, .dash, .dot, .dot]
+        case "m":
+            return [.dash, .dash]
+        case "n":
+            return [.dash, .dot]
+        case "o":
+            return [.dash, .dash, .dash]
+        case "p":
+            return [.dot, .dash, .dash, .dot]
+        case "q":
+            return [.dash, .dash, .dot, .dash]
+        case "r":
+            return [.dot, .dash, .dot]
+        case "s":
+            return [.dot, .dot, .dot]
+        case "t":
+            return [.dash]
+        case "u":
+            return [.dot, .dot, .dash]
+        case "v":
+            return [.dot, .dot, .dot, .dash]
+        case "w":
+            return [.dot, .dash, .dash]
+        case "x":
+            return [.dash, .dot, .dot, .dash]
+        case "y":
+            return [.dash, .dot, .dash, .dash]
+        case "z":
+            return [.dash, .dash, .dot, .dot]
+        case "1":
+            return [.dot, .dash, .dash, .dash, .dash]
+        case "2":
+            return [.dot, .dot, .dash, .dash, .dash]
+        case "3":
+            return [.dot, .dot, .dot, .dash, .dash]
+        case "4":
+            return [.dot, .dot, .dot, .dot, .dash]
+        case "5":
+            return [.dot, .dot, .dot, .dot, .dot]
+        case "6":
+            return [.dash, .dot, .dot, .dot, .dot]
+        case "7":
+            return [.dash, .dash, .dot, .dot, .dot]
+        case "8":
+            return [.dash, .dash, .dash, .dot, .dot]
+        case "9":
+            return [.dash, .dash, .dash, .dash, .dot]
+        case "0":
+            return [.dash, .dash, .dash, .dash, .dash]
+        default:
+            return nil
+        }
+    }
+    
+    
     
     static func createDot(withDelay delay: Double = 0) -> CHHapticEvent {
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
@@ -54,91 +135,16 @@ class MorseCharacterFactory {
         var currentDelay = initialDelay
         var events: [CHHapticEvent] = []
         
-        switch character.lowercased() {
-            
-        case "a":
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDash(withDelay: currentDelay))
-            
-        case "b":
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "c":
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "d":
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "e":
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "f":
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "g":
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDash(withDelay: currentDelay))
-            currentDelay += dashLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "h":
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        case "i":
-            events.append(createDot(withDelay: currentDelay))
-            currentDelay += dotLength + innerCharacterSpacing
-            
-            events.append(createDot(withDelay: currentDelay))
-            
-        default:
-            return nil
+        guard let signals = getMorseSignals(for: character.lowercased().first!) else { return nil }
+        
+        for signal in signals {
+            if signal == .dot {
+                events.append(createDot(withDelay: currentDelay))
+                currentDelay += dotLength + innerCharacterSpacing
+            } else if signal == .dash {
+                events.append(createDash(withDelay: currentDelay))
+                currentDelay += dashLength + innerCharacterSpacing
+            }
         }
         
         let morseCharacter = MorseCharacter(char: character.lowercased(), pattern: events)
